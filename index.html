@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Conversor de moedas</title>
+</head>
+
+<body>
+  <main>
+    <h1>Conversor de moedas</h1>
+    <div class="container-primary">
+      <input class="input-value" placeholder="Valor">
+      <select class="select-left">
+        <option value="real">Real brasileiro</option>
+      </select>
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M16.2929 6.25737C16.6834 5.86685 17.3166 5.86685 17.7071 6.25737L21.7071 10.2574C21.9931 10.5434 22.0787 10.9735 21.9239 11.3472C21.7691 11.7208 21.4045 11.9645 21 11.9645H7.00003C6.44774 11.9645 6.00003 11.5168 6.00003 10.9645C6.00003 10.4122 6.44774 9.96448 7.00003 9.96448H18.5858L16.2929 7.67158C15.9024 7.28106 15.9024 6.6479 16.2929 6.25737ZM2.07615 14.5818C2.23093 14.2081 2.59557 13.9645 3.00003 13.9645H17C17.5523 13.9645 18 14.4122 18 14.9645C18 15.5168 17.5523 15.9645 17 15.9645H5.41424L7.70714 18.2574C8.09766 18.6479 8.09766 19.2811 7.70714 19.6716C7.31661 20.0621 6.68345 20.0621 6.29292 19.6716L2.29292 15.6716C2.00692 15.3856 1.92137 14.9555 2.07615 14.5818Z"
+          fill="#0F172A" />
+      </svg>
+
+      <select class="select-rigth">
+        <option value="euro">Euro</option>
+        <option value="dolar">Dólar Americano</option>
+        <option value="yen">Yen Japones</option>
+      </select>
+
+      <button class="button-convert">Converter</button>
+    </div>
+
+    <div class="container-of">
+      <p class="convertion-of">Conversão de:</p>
+      <p class="value-to-convert">Valor a converter:</p>
+
+    </div>
+
+    <div class="container-to">
+      <p class="convertion-to">Convertido para:</p>
+      <p class="converted-value">Resultado da conversão:</p>
+
+    </div>
+
+  </main>
+</body>
+<script src="./scripts.js"></script>
+
+</html>

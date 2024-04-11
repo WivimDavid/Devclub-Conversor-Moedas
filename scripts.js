@@ -3,16 +3,21 @@ const convertButton = document.querySelector(".button-convert")
 const currencySelect = document.querySelector(".select-rigth")
 
 
-function convertValues() { //Converte o valor das moedas
+
+
+async function convertValues () { //Converte o valor das moedas
   const inputValue = document.querySelector(".input-value").value  // Valor capturado do input
   const ValueOfTheCurrencyToConvert = document.querySelector(".value-to-convert") //Valor a converter
   const currencyValueConverted = document.querySelector(".converted-value") // Resulado da conversão
+
+  const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then( response => response.json())
+  console.log(data)
+
+  const dolarToday = data.USDBRL // Valor do Dólar
+  const euroToday = data.EURBRL // Valor do Euro 
+  const yenToday = data.JPYBRL  // Iene Japones
   
-  const dolarToday = 4.89 // Valor do Dólar
-  const euroToday = 5.32 // Valor do Euro
-  const yenToday = 0.03  // libra esterlina
-
-
+  
 
   if (currencySelect.value == "dolar") {
     // Se o select estiver selecionado o valor da moeda, entre aqui
@@ -35,14 +40,11 @@ function convertValues() { //Converte o valor das moedas
      currency: "JPY"
    }).format(inputValue / yenToday)
  }
-
-
+ 
   ValueOfTheCurrencyToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL"
   }).format(inputValue)
-
-
 }
 
 // Mudança do select e Troca de nome no HTML
@@ -68,3 +70,4 @@ function changeCurrency(){
 // Ouvinte de eventos
 currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
+
